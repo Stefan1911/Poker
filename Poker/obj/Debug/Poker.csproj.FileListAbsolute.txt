@@ -1,0 +1,23 @@
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\bin\Debug\Poker.exe.config
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.Form1.resources
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.Form2.resources
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.Form3.resources
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.Properties.Resources.resources
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.csproj.GenerateResource.Cache
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\bin\Debug\Poker.exe
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\bin\Debug\Poker.pdb
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.exe
+c:\users\pc\documents\visual studio 2015\Projects\Poker\Poker\obj\Debug\Poker.pdb
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.csprojAssemblyReference.cache
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.Form1.resources
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.Form2.resources
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.Form3.resources
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.Properties.Resources.resources
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.csproj.GenerateResource.cache
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.csproj.CoreCompileInputs.cache
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.exe
+D:\Work Space\C#\Poker\Poker\obj\Debug\Poker.pdb
+D:\Work Space\C#\Poker\Poker\bin\Debug\Poker.exe.config
+D:\Work Space\C#\Poker\Poker\bin\Debug\Poker.exe
+D:\Work Space\C#\Poker\Poker\bin\Debug\Poker.pdb
