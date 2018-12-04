@@ -85,17 +85,16 @@ namespace Poker.Model
             this.poeni += vrednost;
         }
 
-        public void novaRuka()
+        public void novaRuka(int broj)
         {
             this.vratiUSpil(ruka);
             this.ruka.Clear();
             this.promesaj();
-            this.vuci5();
+            this.vuci(broj);
         }
-
-        private void vuci5()
+        public void vuci(int broj)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < broj; i++)
             {
                 this.izvuciPrvu();
             }

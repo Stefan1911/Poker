@@ -8,12 +8,14 @@ namespace Poker.Controller
 {
     public interface IController
     {
-        void vuci5();
+        void vuci(int broj);
+        void prikaziRuku();
         void zameni(List<int> list);
         void ulog();
         int brojPoena();
         void sledecaRunda();
         void postaviPoene();
         int whatIs();
+        void pocniIgru();
     }
 }

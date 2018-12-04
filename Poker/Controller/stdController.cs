@@ -26,7 +26,7 @@ namespace Poker.Controller
             this.model.ulog(brojPoena() -5);
         }
 
-        public void vuci5()
+        public void prikaziRuku()
         {
             this.view.Karte = this.model.Ruka;
         }
@@ -70,7 +70,7 @@ namespace Poker.Controller
         public void sledecaRunda()
         {
             this.ulog();
-            this.model.novaRuka();
+            this.model.novaRuka(5);
             this.view.Karte = this.model.Ruka;
             this.view.Poeni = this.model.Poeni;
         }
@@ -82,6 +82,20 @@ namespace Poker.Controller
         public int whatIs()
         {
             return Rank.Instance.getRank(this.model.Ruka);
+        }
+
+        public void pocniIgru()
+        {
+            this.model.Ruka.Clear();
+            this.model.novaRuka(5);
+            this.postaviPoene();
+            this.prikaziRuku();
+        }
+
+        public void vuci(int broj)
+        {
+            this.model.vuci(broj);
+            this.prikaziRuku();
         }
     }
 }

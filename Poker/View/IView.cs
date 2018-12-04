@@ -15,7 +15,6 @@ namespace Poker.View
         int Poeni { set; }
         List<Karta> Karte
         {
-            get;
             set;
         }
     }

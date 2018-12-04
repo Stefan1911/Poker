@@ -21,28 +21,52 @@ namespace Poker
         }
         IController controller;
 
-        public List<Karta> Karte
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                pb1.Image = value.ElementAt(0).Slika;
-                pb2.Image = value.ElementAt(1).Slika;
-                pb3.Image = value.ElementAt(2).Slika;
-                pb4.Image = value.ElementAt(3).Slika;
-                pb5.Image = value.ElementAt(4).Slika;
-            }
-        }
+        
 
         public int Poeni {
             set
             {
                 pointsLabela.Text = value.ToString();
+            }
+        }
 
+        public List<Karta> Karte
+        {
+            set
+            {
+                pb1.Image = value.ElementAt(0).Slika;
+                pb2.Image = value.ElementAt(1).Slika;
+
+
+                if (value.Count >= 3)
+                {
+                    pb3.Visible = true;
+                    pb3.Image = value.ElementAt(2).Slika;
+                }
+                else
+                {
+                    pb3.Visible = false;
+                }
+
+                if (value.Count >= 4)
+                {
+                    pb4.Visible = true;
+                    pb4.Image = value.ElementAt(3).Slika;
+                }
+                else
+                {
+                    pb4.Visible = false;
+                }
+
+                if (value.Count >= 5)
+                {
+                    pb5.Visible = true;
+                    pb5.Image = value.ElementAt(4).Slika;
+                }
+                else
+                {
+                    pb5.Visible = false;
+                }
             }
         }
 
@@ -54,6 +78,7 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             Form3 f = new Form3();
             if(f.ShowDialog() == DialogResult.OK)
             {
@@ -64,8 +89,7 @@ namespace Poker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.controller.vuci5();
-            this.controller.postaviPoene();
+            this.controller.pocniIgru();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,6 +104,11 @@ namespace Poker
         {
             MessageBox.Show(this.controller.whatIs().ToString());
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.controller.vuci(1);
         }
     }
 }

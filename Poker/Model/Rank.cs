@@ -56,6 +56,8 @@ namespace Poker.Model
 
         public bool isFlush(List<Karta> ruka)
         {
+            if (ruka.Count < 5)
+                return false;
             bool temp = true;
             int i = 0;
             while (temp && i < ruka.Count - 1)
@@ -68,6 +70,8 @@ namespace Poker.Model
 
         public bool  isStr(List<Karta> ruka)
         {
+            if (ruka.Count < 5)
+                return false;
             bool temp = false;
             int i = 0;
             while(!temp && i < ruka.Count-1)
@@ -97,6 +101,7 @@ namespace Poker.Model
         }
         public bool isBigBobtail(List<Karta> ruka)
         {
+
             if (ruka.Count < 4)
                 return false;
 
@@ -114,6 +119,8 @@ namespace Poker.Model
         }
         public bool isFourOfaKind(List<Karta> ruka)
         {
+            if (ruka.Count < 4)
+                return false;
             bool temp = false;
             int i = 0;
             while(!temp && i < ruka.Count)
@@ -139,6 +146,8 @@ namespace Poker.Model
 
         public bool isTreeOfaKind(List<Karta> ruka)
         {
+            if (ruka.Count < 3)
+                return false;
             bool temp = false;
             int i = 0;
             while (!temp && i < ruka.Count)
@@ -176,6 +185,8 @@ namespace Poker.Model
         }
         public bool isTwoPairs(List<Karta> ruka)
         {
+            if (ruka.Count < 4)
+                return false;
             int i = 0;
             int bigCount = 0;
             while (i < ruka.Count)
@@ -196,6 +207,8 @@ namespace Poker.Model
         }
         public bool isBlaze(List<Karta> ruka)
         {
+            if (ruka.Count < 5)
+                return false;
             bool temp = true;
             int i = 0;
             while (temp && i< ruka.Count)

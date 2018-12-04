@@ -16,7 +16,7 @@ namespace Poker.Model
         void zameniKarte(List<int> intList);
         void ulog(int broj);
         int Poeni{ get; set; }
-        void novaRuka();
-
+        void novaRuka(int broj);
+        void vuci(int broj);
     }
 }

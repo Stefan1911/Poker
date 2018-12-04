@@ -33,15 +33,17 @@
             this.cbx = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnok = new System.Windows.Forms.Button();
+            this.stdRadio = new System.Windows.Forms.RadioButton();
+            this.texasRadio = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(16, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 20);
+            this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Model skupa karata:";
             // 
@@ -64,10 +66,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(16, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.Size = new System.Drawing.Size(145, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Pocetni broj poena:";
             // 
@@ -81,12 +83,36 @@
             this.btnok.UseVisualStyleBackColor = true;
             this.btnok.Click += new System.EventHandler(this.button1_Click);
             // 
+            // stdRadio
+            // 
+            this.stdRadio.AutoSize = true;
+            this.stdRadio.Location = new System.Drawing.Point(20, 79);
+            this.stdRadio.Name = "stdRadio";
+            this.stdRadio.Size = new System.Drawing.Size(68, 17);
+            this.stdRadio.TabIndex = 5;
+            this.stdRadio.TabStop = true;
+            this.stdRadio.Text = "Standard";
+            this.stdRadio.UseVisualStyleBackColor = true;
+            // 
+            // texasRadio
+            // 
+            this.texasRadio.AutoSize = true;
+            this.texasRadio.Location = new System.Drawing.Point(111, 79);
+            this.texasRadio.Name = "texasRadio";
+            this.texasRadio.Size = new System.Drawing.Size(50, 17);
+            this.texasRadio.TabIndex = 6;
+            this.texasRadio.TabStop = true;
+            this.texasRadio.Text = "texas";
+            this.texasRadio.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(324, 206);
+            this.Controls.Add(this.texasRadio);
+            this.Controls.Add(this.stdRadio);
             this.Controls.Add(this.btnok);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbx);
@@ -109,5 +135,7 @@
         private System.Windows.Forms.ComboBox cbx;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnok;
+        private System.Windows.Forms.RadioButton stdRadio;
+        private System.Windows.Forms.RadioButton texasRadio;
     }
 }

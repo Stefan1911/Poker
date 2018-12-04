@@ -25,7 +25,16 @@ namespace Poker
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 view = new Form1();
-            Poker.Controller.IController cont = new Poker.Controller.stdController(this.model, view);
+            if (stdRadio.Checked)
+            {
+                Poker.Controller.IController cont = new Poker.Controller.stdController(this.model, view);
+            }
+            else
+            {
+                Poker.Controller.IController cont = new Poker.Controller.texasController(this.model, view);
+            }
+                
+
             view.ShowDialog();
             this.Close();
 

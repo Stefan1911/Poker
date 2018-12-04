@@ -3,49 +3,97 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Poker.Model;
+using Poker.View;
 
 namespace Poker.Controller
 {
     class texasController : IController
     {
-        public int brojPoena()
-        {
-            throw new NotImplementedException();
-        }
+        private IModel model;
+        private IView view;
 
-        public void postaviPoene()
+        public texasController(IModel model, IView view)
         {
-            throw new NotImplementedException();
-        }
-
-        public void sledecaRunda()
-        {
-            throw new NotImplementedException();
+            this.model = model;
+            this.view = view;
+            this.view.Add(this);
         }
 
         public void ulog()
         {
-            throw new NotImplementedException();
+            this.model.ulog(brojPoena() - 5);
         }
 
-        public void ulog(int vrednost)
+        public void prikaziRuku()
         {
-            throw new NotImplementedException();
-        }
-
-        public void vuci5()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int whatIs()
-        {
-            throw new NotImplementedException();
+            this.view.Karte = this.model.Ruka;
         }
 
         public void zameni(List<int> list)
         {
-            throw new NotImplementedException();
+           
+        }
+
+        public int brojPoena()
+        {
+            int temp = Rank.Instance.getRank(this.model.Ruka);
+            switch (temp)
+            {
+                case 1:
+                    return 100;
+                case 2:
+                    return 60;
+                case 3:
+                    return 40;
+                case 4:
+                    return 25;
+                case 5:
+                    return 16;
+                case 6:
+                    return 12;
+                case 7:
+                    return 9;
+                case 8:
+                    return 6;
+                case 9:
+                    return 4;
+                case 10:
+                    return 2;
+                default:
+                    break;
+            }
+            return 0;
+        }
+        public void sledecaRunda()
+        {
+            this.ulog();
+            this.model.novaRuka(2);
+            this.view.Karte = this.model.Ruka;
+            this.view.Poeni = this.model.Poeni;
+        }
+        public void postaviPoene()
+        {
+            this.view.Poeni = this.model.Poeni;
+        }
+
+        public int whatIs()
+        {
+            return Rank.Instance.getRank(this.model.Ruka);
+        }
+
+        public void pocniIgru()
+        {
+            this.model.Ruka.Clear();
+            this.model.novaRuka(2);
+            this.postaviPoene();
+            this.prikaziRuku();
+        }
+
+        public void vuci(int broj)
+        {
+            this.model.vuci(broj);
+            this.prikaziRuku();
         }
     }
 }
