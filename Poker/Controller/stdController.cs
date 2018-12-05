@@ -21,9 +21,10 @@ namespace Poker.Controller
             this.view.Add(this);
         }
 
-        public void ulog()
+        public void RacunajPoene()
         {
-            this.model.ulog(brojPoena() -5);
+            int ulog = this.view.Ulog;
+            this.model.updatePoene(Dobitak() * ulog);
         }
 
         public void prikaziRuku()
@@ -37,7 +38,7 @@ namespace Poker.Controller
             this.view.Karte = this.model.Ruka;
         }
 
-        public int brojPoena()
+        public int Dobitak()
         {
             int temp = Rank.Instance.getRank(this.model.Ruka);
             switch (temp)
@@ -69,10 +70,11 @@ namespace Poker.Controller
         }
         public void sledecaRunda()
         {
-            this.ulog();
+            this.RacunajPoene();
             this.model.novaRuka(5);
             this.view.Karte = this.model.Ruka;
             this.view.Poeni = this.model.Poeni;
+            this.pocetniUlog();
         }
         public void postaviPoene()
         {
@@ -90,12 +92,18 @@ namespace Poker.Controller
             this.model.novaRuka(5);
             this.postaviPoene();
             this.prikaziRuku();
+            this.pocetniUlog();
         }
 
         public void vuci(int broj)
         {
             this.model.vuci(broj);
             this.prikaziRuku();
+        }
+
+        private void pocetniUlog()
+        {
+            this.model.updatePoene(-5);
         }
     }
 }

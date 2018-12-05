@@ -11,8 +11,8 @@ namespace Poker.Controller
         void vuci(int broj);
         void prikaziRuku();
         void zameni(List<int> list);
-        void ulog();
-        int brojPoena();
+        void RacunajPoene();
+        int Dobitak();
         void sledecaRunda();
         void postaviPoene();
         int whatIs();

@@ -53,6 +53,7 @@
             this.poeniBox.Name = "poeniBox";
             this.poeniBox.Size = new System.Drawing.Size(121, 20);
             this.poeniBox.TabIndex = 1;
+            this.poeniBox.Text = "500";
             // 
             // cbx
             // 

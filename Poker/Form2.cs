@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Poker.View;
 
 namespace Poker
 {
@@ -24,7 +25,7 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 view = new Form1();
+            IView view = new Form1();
             if (stdRadio.Checked)
             {
                 Poker.Controller.IController cont = new Poker.Controller.stdController(this.model, view);
@@ -35,7 +36,7 @@ namespace Poker
             }
                 
 
-            view.ShowDialog();
+            ((Form)view).ShowDialog();
             this.Close();
 
         }

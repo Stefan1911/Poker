@@ -14,7 +14,7 @@ namespace Poker.Model
         void vratiUSpil(List<Karta> karte);
         List<Karta> Ruka { get; set; }
         void zameniKarte(List<int> intList);
-        void ulog(int broj);
+        void updatePoene(int broj);
         int Poeni{ get; set; }
         void novaRuka(int broj);
         void vuci(int broj);

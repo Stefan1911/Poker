@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Poker.Model;
 using Poker.View;
+using System.Windows.Forms;
 
 namespace Poker.Controller
 {
@@ -20,9 +21,27 @@ namespace Poker.Controller
             this.view.Add(this);
         }
 
-        public void ulog()
+        public void RacunajPoene()
         {
-            this.model.ulog(brojPoena() - 5);
+            int ulog = this.view.Ulog;
+            if(this.model.Ruka.Count == 2)
+            {
+                this.model.updatePoene(Dobitak()* ulog * 5);
+            }
+            else if(this.model.Ruka.Count == 3)
+            {
+                this.model.updatePoene(Dobitak() * ulog * 5);
+            }
+            else if (this.model.Ruka.Count == 4)
+            {
+                
+                this.model.updatePoene((Dobitak() *5) -ulog);
+            }
+            else
+            {
+                this.model.updatePoene(Dobitak() - 2*ulog);
+            }
+
         }
 
         public void prikaziRuku()
@@ -32,10 +51,10 @@ namespace Poker.Controller
 
         public void zameni(List<int> list)
         {
-           
+            MessageBox.Show("nema zamene u texasu, yeeehaa!!!");
         }
 
-        public int brojPoena()
+        public int Dobitak()
         {
             int temp = Rank.Instance.getRank(this.model.Ruka);
             switch (temp)
@@ -67,10 +86,12 @@ namespace Poker.Controller
         }
         public void sledecaRunda()
         {
-            this.ulog();
+            this.RacunajPoene();
             this.model.novaRuka(2);
             this.view.Karte = this.model.Ruka;
             this.view.Poeni = this.model.Poeni;
+            this.pocetniUlog();
+            this.postaviPoene();
         }
         public void postaviPoene()
         {
@@ -86,8 +107,10 @@ namespace Poker.Controller
         {
             this.model.Ruka.Clear();
             this.model.novaRuka(2);
-            this.postaviPoene();
             this.prikaziRuku();
+            this.pocetniUlog();
+            this.postaviPoene();
+
         }
 
         public void vuci(int broj)
@@ -95,5 +118,11 @@ namespace Poker.Controller
             this.model.vuci(broj);
             this.prikaziRuku();
         }
+
+        private void pocetniUlog()
+        {
+            this.model.updatePoene(-5);
+        }
+
     }
 }

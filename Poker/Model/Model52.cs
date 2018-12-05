@@ -80,7 +80,7 @@ namespace Poker.Model
             this.spil.vrati(temp);
         }
 
-        public void ulog(int vrednost)
+        public void updatePoene(int vrednost)
         {
             this.poeni += vrednost;
         }

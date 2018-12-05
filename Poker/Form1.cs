@@ -14,21 +14,19 @@ namespace Poker
 {
     public partial class Form1 : Form, IView
     {
+        IController controller;
         public Form1()
         {
             InitializeComponent();
             
         }
-        IController controller;
-
-        
-
         public int Poeni {
             set
             {
                 pointsLabela.Text = value.ToString();
             }
         }
+        public int Ulog { get { return Int32.Parse(this.ulogBox.Text); } }
 
         public List<Karta> Karte
         {

@@ -13,6 +13,7 @@ namespace Poker.View
     {
         void Add(IController controller);
         int Poeni { set; }
+        int Ulog { get; }
         List<Karta> Karte
         {
             set;
